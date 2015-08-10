@@ -16,7 +16,8 @@ var gulp = require("gulp"),
     ftp = require('vinyl-ftp'),
     reload = browserSync.reload,
     autoprefixer = require('gulp-autoprefixer'),
-    uncss = require('gulp-uncss');
+    uncss = require('gulp-uncss'),
+    sass = require('gulp-sass');
 
 gulp.task('jade', function () {
 	gulp.src('app/templates/pages/*.jade')
@@ -28,7 +29,13 @@ gulp.task('jade', function () {
 	.pipe(reload({stream: true}));
 });
 
-gulp.task('server', ['jade', 'autoprefix'], function () {
+gulp.task('scss', function () {
+  gulp.src('app/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('app/css'));
+});
+
+gulp.task('server', ['jade', 'scss'], function () {
 	browserSync({
 		notify: false,
 		port: 9000,
@@ -46,18 +53,6 @@ gulp.task('wiredep', function() {
 		.pipe(gulp.dest('app/templates/common/'))
 });
 
-
-gulp.task('watch', function () {
-	gulp.watch('app/templates/**/*.jade', ['jade']);
-	gulp.watch('bower.json', ['wiredep']);
-	gulp.watch('app/css/**/*.css', ['autoprefix']);
-	gulp.watch([
-		'app/js/**/*.js',
-		'app/css/**/*.css'
-	]).on('change', reload);
-});
-
-
 gulp.task('autoprefix', function () {
     return gulp.src('app/**/*.css')
         .pipe(autoprefixer({
@@ -66,6 +61,22 @@ gulp.task('autoprefix', function () {
         }))
         .pipe(gulp.dest('app'));
 });
+
+
+
+gulp.task('watch', function () {
+	gulp.watch('app/templates/**/*.jade', ['jade']);
+	gulp.watch('bower.json', ['wiredep']);
+	gulp.watch('app/scss/*.scss', ['scss']);
+	gulp.watch('app/css/**/*.css', ['autoprefix']);
+	gulp.watch([
+		'app/js/**/*.js',
+		'app/css/**/*.css'
+	]).on('change', reload);
+});
+
+
+
 
 
 
