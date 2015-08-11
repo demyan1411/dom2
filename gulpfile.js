@@ -29,10 +29,19 @@ gulp.task('jade', function () {
 	.pipe(reload({stream: true}));
 });
 
-gulp.task('scss', function () {
-  gulp.src('app/scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('app/css'));
+gulp.task('scss', function() {
+	return gulp.src('app/scss/*.scss')
+		.pipe(sass({
+			noCache: true,
+			style: "expanded",
+			lineNumbers: true,
+			errLogToConsole: true
+		}))
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions', 'ie 8', 'ie 9'],
+			cascade: false
+		}))
+		.pipe(gulp.dest('app/css'));
 });
 
 gulp.task('server', ['jade', 'scss'], function () {
@@ -53,35 +62,19 @@ gulp.task('wiredep', function() {
 		.pipe(gulp.dest('app/templates/common/'))
 });
 
-gulp.task('autoprefix', function () {
-    return gulp.src('app/**/*.css')
-        .pipe(autoprefixer({
-            browsers: ['last 15 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest('app'));
-});
-
-
 
 gulp.task('watch', function () {
 	gulp.watch('app/templates/**/*.jade', ['jade']);
-	gulp.watch('bower.json', ['wiredep']);
 	gulp.watch('app/scss/*.scss', ['scss']);
-	gulp.watch('app/css/**/*.css', ['autoprefix']);
+	gulp.watch('bower.json', ['wiredep']);
 	gulp.watch([
 		'app/js/**/*.js',
-		'app/css/**/*.css'
+		'app/css/*.css',
+		'app/*.html'
 	]).on('change', reload);
 });
 
-
-
-
-
-
 gulp.task('default', ['server', 'watch']);
-
 
 
 var log = function (error) {
@@ -95,13 +88,6 @@ var log = function (error) {
   ].join('\n'));
   this.end();
 }
-
-
-
-
-
-
-
 
 
 gulp.task('clean', function() {
