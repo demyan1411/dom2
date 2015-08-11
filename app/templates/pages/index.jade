@@ -1,7 +1,13 @@
 extends ../layouts/main_layout.jade
 
 block title
-  title главная
 
-block content
+block left_column
+	include ../common/logo.jade
+	include ../common/form.jade
+	include ../common/images.jade
+	include ../common/adress.jade
 
+block right_column
+	include ../common/slider.jade
+	include ../common/products.jade

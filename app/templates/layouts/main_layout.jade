@@ -2,10 +2,13 @@ doctype html
 html(lang='ru-RU')
 	include ../common/head.jade
 	body
-		.main_wrap
-			.main
-				include ../common/header.jade
-					block content
+		.main
+			.main__wrapper
+				.column.column-left
+					block left_column
+				.column.column-right
+					block right_column
+				.up_btn
 
 		include ../common/footer.jade
 		include ../common/scripts.jade
