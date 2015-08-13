@@ -3,12 +3,12 @@ html(lang='ru-RU')
 	include ../common/head.jade
 	body
 		.main
-			.main__wrapper
+			.wrapper.main__wrapper_all
 				.column.column-left
-					block left_column
+					block column_left
 				.column.column-right
-					block right_column
-				.up_btn
+					block column_right
+				.button.button_up Наверх
 
 		include ../common/footer.jade
 		include ../common/scripts.jade

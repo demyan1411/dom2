@@ -30,7 +30,7 @@ gulp.task('jade', function () {
 });
 
 gulp.task('scss', function() {
-	return gulp.src('app/scss/*.scss')
+	return gulp.src('app/scss/main/*.scss')
 		.pipe(sass({
 			noCache: true,
 			style: "expanded",
@@ -65,7 +65,7 @@ gulp.task('wiredep', function() {
 
 gulp.task('watch', function () {
 	gulp.watch('app/templates/**/*.jade', ['jade']);
-	gulp.watch('app/scss/*.scss', ['scss']);
+	gulp.watch('app/scss/**/*.scss', ['scss']);
 	gulp.watch('bower.json', ['wiredep']);
 	gulp.watch([
 		'app/js/**/*.js',

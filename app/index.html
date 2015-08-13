@@ -9,18 +9,11 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <!-- build:css css/vendor.min.css-->
     <!-- bower:css-->
-    <link rel="stylesheet" href="/bower/normalize.css/normalize.css">
+    <link rel="stylesheet" href="/bower/reset-css/reset.css">
     <!-- endbower-->
     <!-- endbuild-->
     <!-- build:css css/style.min.css-->
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/logo.css">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/images.css">
-    <link rel="stylesheet" href="css/adress.css">
-    <link rel="stylesheet" href="css/slider.css">
-    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/main.css">
     <!--endbuild-->
     <!-- build:css css/oldIe.min.css--><!--[if lte IE 8]>
     <link rel="stylesheet" href="css/oldIe.css"><![endif]-->
@@ -31,16 +24,78 @@
   </head>
   <body>
     <div class="main">
-      <div class="main__wrapper">
-        <div class="column column-left"><a href="#" class="logo"><img src="img/logo.png" alt="logo" class="logo-img"></a>
-          <p>привет мир</p>
+      <div class="wrapper main__wrapper_all">
+        <div class="column column-left"><a href="#" class="logo"><img src="img/logo.png" alt="logo" class="logo__img"></a>
+          <form class="form">
+            <h2 class="form__title">Заказать звонок</h2><span class="form__desc">Ваше имя</span>
+            <label class="form__label">
+              <input type="text" name="name" class="form__input">
+            </label><span class="form__desc">Телефон</span>
+            <label class="form__label">
+              <input type="text" name="phone" class="form__input">
+            </label><span class="form__desc">Дата звонка</span>
+            <label class="form__label">
+              <select name="day" class="form__select">
+                <option value="qwe" class="fotm__option">01</option>
+                <option value="qwe" class="fotm__option">01</option>
+                <option value="qwe" class="fotm__option">01</option>
+                <option value="qwe" class="fotm__option">01</option>
+              </select>
+              <select name="month" class="form__select">
+                <option value="qwe" class="fotm__option">01</option>
+                <option value="qwe" class="fotm__option">01</option>
+                <option value="qwe" class="fotm__option">01</option>
+                <option value="qwe" class="fotm__option">01</option>
+              </select>
+            </label>
+            <textarea name="comment" rows="10" class="form__textarea"></textarea>
+            <button type="submit" class="button">Отправить</button>
+            <button type="reset" class="button button_reset">Очистить</button>
+          </form>
+          <ul class="images">
+            <li><img src="" alt="images__img1" class="images__img images__img_img1"></li>
+            <li><img src="" alt="images__img2" class="images__img images__img_img2"></li>
+            <li><img src="" alt="images__img3" class="images__img images__img_img3"></li>
+            <li><img src="" alt="images__img4" class="images__img images__img_img4"></li>
+            <li><img src="" alt="images__img5" class="images__img images__img_img5"></li>
+            <li><img src="" alt="images__img6" class="images__img images__img_img6"></li>
+            <li><img src="" alt="images__img7" class="images__img images__img_img7"></li>
+            <li><img src="" alt="images__img8" class="images__img images__img_img8"></li>
+            <li><img src="" alt="images__img9" class="images__img images__img_img9"></li>
+          </ul>
+          <adress class="adress">
+            <div class="adress__adr"></div><a href="tel:+79812342323" class="adress__phone">+1234567890</a>
+          </adress>
         </div>
-        <div class="column column-right"></div>
-        <div class="up_btn"></div>
+        <div class="column column-right">
+          <div class="slider">
+            <div class="slider__wrapp">
+              <div class="slider__slide"><img src="" alt="slide1" class="slider__img">
+                <div class="slider__footer"><a href="" class="slider__blueA">iMac за пол цены</a><span class="slider__text">Прини свой старый Mac  и получи скидку на новый!</span></div>
+              </div>
+              <div class="slider__slide"><img src="" alt="slide2" class="slider__img">
+                <div class="slider__footer"><a href="" class="slider__blueA">До 31 декабря, iPhone 4 за 9900 руб.</a><span class="slider__text">Нет денег на шестой iPhone? Купи себе четвертый!</span></div>
+              </div>
+              <div class="slider__slide"><img src="" alt="slide3" class="slider__img">
+                <div class="slider__footer"><a href="" class="slider__blueA">Конкурс на концепт IPhone 7</a><span class="slider__text">Выйграй iPad Air за самый необычный  и интереный дизайн нового iPhone 7.</span></div>
+              </div>
+            </div>
+            <div class="slider__btn slider__btn_prev">Пред.</div>
+            <div class="slider__btn slider__btn_next">След.</div>
+          </div>
+          <div class="products">
+            <div class="products__name">Популярные товары</div><a href="" class="product"><img src="" alt="" class="product__img"><span class="product__name">Apple Thunderb Display 27"</span><span class="product__text product__text-key">Артикул</span><span class="product__text product__text-value">42787825</span><span class="product__text product__text-key">Опция</span><span class="product__text product__text-value">включена</span><span class="product__text product__text-key">Цвет</span><span class="product__text product__text-value">серебристый</span><span class="product__text product__text-key">Размер</span><span class="product__text product__text-value">1280*1245*90</span><span class="product__text product__text-key">Вес</span><span class="product__text product__text-value">9 кг</span></a><a href="" class="product"><img src="" alt="" class="product__img"><span class="product__name">iMac 27"</span><span class="product__text product__text-key">Артикул</span><span class="product__text product__text-value">42787825</span><span class="product__text product__text-key">Опция</span><span class="product__text product__text-value">включена</span><span class="product__text product__text-key">Цвет</span><span class="product__text product__text-value">серебристый</span><span class="product__text product__text-key">Размер</span><span class="product__text product__text-value">1280*1245*90</span><span class="product__text product__text-key">Вес</span><span class="product__text product__text-value">9 кг</span></a><a href="" class="product"><img src="" alt="" class="product__img"><span class="product__name">iPhone 5s Gold</span><span class="product__text product__text-key">Артикул</span><span class="product__text product__text-value">42787825</span><span class="product__text product__text-key">Опция</span><span class="product__text product__text-value">включена</span><span class="product__text product__text-key">Цвет</span><span class="product__text product__text-value">серебристый</span><span class="product__text product__text-key">Размер</span><span class="product__text product__text-value">1280*1245*90</span><span class="product__text product__text-key">Вес</span><span class="product__text product__text-value">9 кг</span></a><a href="" class="product"><img src="" alt="" class="product__img"><span class="product__name">iPad Air Wi-Fi 128GB - Silver</span><span class="product__text product__text-key">Артикул</span><span class="product__text product__text-value">42787825</span><span class="product__text product__text-key">Опция</span><span class="product__text product__text-value">включена</span><span class="product__text product__text-key">Цвет</span><span class="product__text product__text-value">серебристый</span><span class="product__text product__text-key">Размер</span><span class="product__text product__text-value">1280*1245*90</span><span class="product__text product__text-key">Вес</span><span class="product__text product__text-value">9 кг</span></a><a href="" class="product"><img src="" alt="" class="product__img"><span class="product__name">Apple iPod nano 7G 16 ГБ Blue</span><span class="product__text product__text-key">Артикул</span><span class="product__text product__text-value">42787825</span><span class="product__text product__text-key">Опция</span><span class="product__text product__text-value">включена</span><span class="product__text product__text-key">Цвет</span><span class="product__text product__text-value">серебристый</span><span class="product__text product__text-key">Размер</span><span class="product__text product__text-value">1280*1245*90</span><span class="product__text product__text-key">Вес</span><span class="product__text product__text-value">9 кг</span></a><a href="" class="product"><img src="" alt="" class="product__img"><span class="product__name">Роутер Wi-Fi Apple AirPort</span><span class="product__text product__text-key">Артикул</span><span class="product__text product__text-value">42787825</span><span class="product__text product__text-key">Опция</span><span class="product__text product__text-value">включена</span><span class="product__text product__text-key">Цвет</span><span class="product__text product__text-value">серебристый</span><span class="product__text product__text-key">Размер</span><span class="product__text product__text-value">1280*1245*90</span><span class="product__text product__text-key">Вес</span><span class="product__text product__text-value">9 кг</span></a>
+          </div>
+        </div>
+        <div class="button button_up">Наверх</div>
       </div>
     </div>
     <footer class="footer">
-      <div class="wrapp"></div>
+      <div class="wrapper"><a href="#" class="logo logo_foot"><img src="img/logo2.png" alt="logo2" class="logo__img logo__img_foot"></a>
+        <div class="footerMenu"><span class="footerMenu__title">О магазине</span><a href="" class="footerMenu__link">О нас</a><a href="" class="footerMenu__link">Наши цены</a><a href="" class="footerMenu__link">Наши скидки</a><a href="" class="footerMenu__link">Акции</a></div>
+        <div class="footerMenu"><span class="footerMenu__title">Каталог</span><a href="" class="footerMenu__link">Смартфоны</a><a href="" class="footerMenu__link">Планшеты</a><a href="" class="footerMenu__link">Компьютеры</a><a href="" class="footerMenu__link">Аксессуары</a></div>
+        <div class="footerMenu"><span class="footerMenu__title">Контакты</span><a href="" class="footerMenu__link">Телефоны</a><a href="" class="footerMenu__link">Адреса</a><a href="" class="footerMenu__link">Карта проезда</a><a href="" class="footerMenu__link">Обратная связь</a></div>
+      </div>
     </footer>
     <!-- build:js js/vendor.min.js-->
     <!-- bower:js-->
