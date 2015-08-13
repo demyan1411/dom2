@@ -1,0 +1,16 @@
+/* fonts */
+@font-face {
+  font-family: 'elektra_light_probold';
+  src: url("../fonts/elektra_light_pro_bold-webfont.eot");
+  src: url("../fonts/elektra_light_pro_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/elektra_light_pro_bold-webfont.woff") format("woff"), url("../fonts/elektra_light_pro_bold-webfont.ttf") format("truetype"), url("../fonts/elektra_light_pro_bold-webfont.svg#elektra_light_probold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'elektra_light_proregular';
+  src: url("../fonts/elektra_light_pro-webfont.eot");
+  src: url("../fonts/elektra_light_pro-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/elektra_light_pro-webfont.woff") format("woff"), url("../fonts/elektra_light_pro-webfont.ttf") format("truetype"), url("../fonts/elektra_light_pro-webfont.svg#elektra_light_proregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* fonts end */

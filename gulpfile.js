@@ -30,21 +30,34 @@ gulp.task('jade', function () {
 });
 
 gulp.task('scss', function() {
-	return gulp.src('app/scss/main/*.scss')
+	gulp.src('app/scss/*.scss')
 		.pipe(sass({
 			noCache: true,
 			style: "expanded",
 			lineNumbers: true,
 			errLogToConsole: true
 		}))
+		.on('error', log)
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions', 'ie 8', 'ie 9'],
 			cascade: false
 		}))
+		.pipe(gulp.dest('app/css/all'));
+});
+
+gulp.task('scss_oldIe', function() {
+	gulp.src('app/scss/oldIe/*.scss')
+		.pipe(sass({
+			noCache: true,
+			style: "expanded",
+			lineNumbers: true,
+			errLogToConsole: true
+		}))
+		.on('error', log)
 		.pipe(gulp.dest('app/css'));
 });
 
-gulp.task('server', ['jade', 'scss'], function () {
+gulp.task('server', ['jade', 'scss', 'scss_oldIe', 'concatCss'], function () {
 	browserSync({
 		notify: false,
 		port: 9000,
@@ -52,6 +65,12 @@ gulp.task('server', ['jade', 'scss'], function () {
 			baseDir: 'app'
 		}
 	});
+});
+
+gulp.task('concatCss', function () {
+  return gulp.src('app/css/all/*.css')
+    .pipe(concatCss("main.css"))
+    .pipe(gulp.dest('app/css'));
 });
 
 gulp.task('wiredep', function() {
@@ -65,7 +84,9 @@ gulp.task('wiredep', function() {
 
 gulp.task('watch', function () {
 	gulp.watch('app/templates/**/*.jade', ['jade']);
-	gulp.watch('app/scss/**/*.scss', ['scss']);
+	gulp.watch('app/scss/*.scss', ['scss']);
+	gulp.watch('app/scss/oldIe/*.scss', ['scss_oldIe']);
+	gulp.watch('app/css/all/*.css', ['concatCss']);
 	gulp.watch('bower.json', ['wiredep']);
 	gulp.watch([
 		'app/js/**/*.js',
