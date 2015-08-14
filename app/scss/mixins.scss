@@ -1,0 +1,46 @@
+$wrapperWidth : 1000px;
+$footerHeight : 240px;
+$bodyFont : 'elektra_light_proregular', sans-serif;
+$bodyFontSize : 14px;
+$bodyColor : #5c7b98;
+$bodyLineHeight : 20px;
+
+$fontBold : 'elektra_light_probold';
+
+// @mixin bold {
+// 	font-family: 'elektra_light_probold';
+// }
+
+@mixin inlineBlock {
+	display: inline-block;
+	vertical-align: top;
+}
+
+@mixin cl {
+	&:before, &:after {content: " "; display: table;}
+	&:after {clear: both;}
+}
+
+@mixin center {
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+@mixin placecolor($color: #000000) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}

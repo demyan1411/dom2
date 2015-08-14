@@ -1,0 +1,20 @@
+mixin product(imgNumber, name, options)
+	a(href="").product
+		img(src="img/product" + imgNumber + ".jpg", alt="" + name).product__img
+		span.product__name= name
+
+		.product__left
+			-var keys = ['Артикул','Опция','Цвет','Размер','Вес']
+			each key in keys
+				span.product__text= key
+
+		.product__right
+			each option in options
+				span.product__text= option
+
+mixin slider__slide(slideNumber, slideTitle, slideText)
+	div(class="slider__slide " + ((slideNumber == 1) ? 'slider__slideActive' : ''))
+		img(src="img/slider/slide" + slideNumber + ".jpg", alt="slide1").slider__img
+		.slider__footer
+			a(href="").slider__title= slideTitle
+			span.slider__text= slideText

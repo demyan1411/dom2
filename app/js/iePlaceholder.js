@@ -6,11 +6,11 @@
  		var $this = $(this),
  			inputPlaceholder = $this.attr('placeholder');
  		if(inputPlaceholder) {
- 			$this.parent('.label').append('<div class="placeholder">' + inputPlaceholder + '</div>');
+ 			$this.parent('label').append('<div class="placeholder">' + inputPlaceholder + '</div>');
  		}
  	});
 
-	$('.label')
+	$('label')
 		.focusin(function() {
 			$(this).find('.placeholder').hide();
 		})
