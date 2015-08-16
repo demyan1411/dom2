@@ -1,0 +1,80 @@
+.slider {
+  width: 100%;
+  position: relative;
+  margin-bottom: 35px; }
+  .slider__wrapp {
+    height: 300px;
+    overflow: hidden;
+    position: relative; }
+  .slider__slide {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .slider__slideActive {
+    z-index: 1; }
+  .slider__footer {
+    position: absolute;
+    bottom: 0;
+    width: 740px;
+    background: #000;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 18px 22px;
+    box-sizing: border-box; }
+  .slider__title {
+    font-size: 18px;
+    line-height: 21px;
+    color: #00b9fe;
+    display: inline-block;
+    margin-bottom: 5px;
+    text-decoration: underline; }
+    .slider__title:hover {
+      text-decoration: none; }
+  .slider__text {
+    color: #fff;
+    display: block; }
+  .slider__btn {
+    position: absolute;
+    z-index: 3;
+    font-family: "elektra_light_probold";
+    line-height: 34px;
+    display: inline-block;
+    background: #fff;
+    padding-left: 7px;
+    padding-right: 7px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all linear 0.2s;
+    top: 105px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; }
+    .slider__btn:after {
+      content: '';
+      border: none;
+      border: 17px solid transparent;
+      border-left: 9px solid #fff;
+      position: absolute;
+      top: 0; }
+    .slider__btn_prev {
+      left: 15px; }
+      .slider__btn_prev:after {
+        right: 100%;
+        border: 17px solid transparent;
+        border-right: 9px solid #fff;
+        transition: all linear 0.2s; }
+      .slider__btn_prev:hover:after {
+        border-right: 9px solid #00b9fe; }
+    .slider__btn_next {
+      right: 15px; }
+      .slider__btn_next:after {
+        left: 100%;
+        transition: all linear 0.2s; }
+      .slider__btn_next:hover:after {
+        border-left: 9px solid #00b9fe; }
+    .slider__btn:hover {
+      background: #00b9fe;
+      color: #fff; }

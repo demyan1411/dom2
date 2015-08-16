@@ -1,7 +1,9 @@
 mixin product(imgNumber, name, options)
 	a(href="").product
-		img(src="img/product" + imgNumber + ".jpg", alt="" + name).product__img
-		span.product__name= name
+		.product__title
+			.product__title_abs
+				img(src="img/product" + imgNumber + ".jpg", alt="" + name).product__img
+				span.product__name= name
 
 		.product__left
 			-var keys = ['Артикул','Опция','Цвет','Размер','Вес']

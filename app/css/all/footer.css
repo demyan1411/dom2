@@ -1,0 +1,51 @@
+.footer {
+  margin-top: -240px;
+  height: 240px;
+  background: url(../img/pattern.jpg) 0 0 repeat;
+  padding-top: 65px;
+  box-sizing: border-box; }
+
+.wrapper_footer {
+  padding-bottom: 0; }
+
+.logo_foot {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 120px; }
+
+.footerMenu {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  margin-right: 65px; }
+  .footerMenu__title {
+    display: block;
+    font-family: "elektra_light_probold"; }
+  .footerMenu__link {
+    display: block;
+    text-decoration: underline; }
+    .footerMenu__link:hover {
+      text-decoration: none; }
+
+.socials {
+  float: right;
+  margin-top: 8px; }
+  .socials__buy_link {
+    margin-right: 7px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px; }
+  .socials__link {
+    display: inline-block;
+    vertical-align: top;
+    width: 45px;
+    height: 44px;
+    background: url(../img/socials.png) 0 0 no-repeat;
+    font-size: 0;
+    margin-right: 10px; }
+    .socials__link_vk {
+      background-position: 0 0; }
+    .socials__link_fb {
+      background-position: -53px 0; }
+    .socials__link_tw {
+      background-position: -103px 0; }

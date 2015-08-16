@@ -1,0 +1,101 @@
+@import "mixins";
+
+.slider {
+	width: 100%;
+	position: relative;
+	margin-bottom: 35px;
+
+	&__wrapp {
+		height: 300px;
+		overflow: hidden;
+		position: relative;
+	}
+	&__slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__slideActive {
+		z-index: 1;
+	}
+	&__footer {
+		position: absolute;
+		bottom: 0;
+		width: 740px;
+		background: #000;
+		background: rgba(0,0,0,.55);
+		padding: 18px 22px;
+		box-sizing: border-box;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 21px;
+		color: #00b9fe;
+		display: inline-block;
+		margin-bottom: 5px;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&__text {
+		color: #fff;
+		display: block;
+	}
+	&__btn {
+		position: absolute;
+		z-index: 3;
+		font-family: $fontBold;
+		line-height: 34px;
+		display: inline-block;
+		background: #fff;
+		padding-left: 7px;
+		padding-right: 7px;
+		box-sizing: border-box;
+		cursor: pointer;
+		transition: all linear .2s;
+		top: 105px;
+		@include noselect;
+
+		&:after {
+			content: '';
+			border: none;
+			border: 17px solid transparent;
+			border-left: 9px solid #fff;
+			position: absolute;
+			top: 0;
+		}
+
+		&_prev {
+			left: 15px;
+
+			&:after {
+				right: 100%;
+				border: 17px solid transparent;
+				border-right: 9px solid #fff;
+				transition: all linear .2s;
+			}
+			&:hover:after {
+				border-right: 9px solid #00b9fe;
+			}
+		}
+
+		&_next {
+			right: 15px;
+
+			&:after {
+				left: 100%;
+				transition: all linear .2s;
+			}
+			&:hover:after {
+				border-left: 9px solid #00b9fe;
+			}
+		}
+
+		&:hover {
+			background: #00b9fe;
+			color: #fff;
+		}
+	}
+}

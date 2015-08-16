@@ -9,22 +9,33 @@ form.form
 	label.form__label.form__label_select
 		span.form__desc Дата звонка
 
-		ul(name="month").form__select
+		.form__select
+			.form__selectValue 01
+			.scroller
+				ul.scroller__contetnt
+					- for (var i = 1; i <= 12; i++)
+						- if (i < 10)
+							li.scroller__option= '0' + i
+						-else
+							li.scroller__option= i
+				.scroller__bar-wrapper
+					.scroller__bar.scroller__bar2
 
-			- for (var i = 1; i <= 12; i++)
-				- if (i < 10)
-					li.form__option= '0' + i
-				-else
-					li.form__option= i
+		.form__select
+			.form__selectValue 01
+			.scroller
+				ul.scroller__contetnt
 
-		ul(name="day").form__select
+					- for (var i = 1; i <= 31; i++)
+						- if (i < 10)
+							li.scroller__option= '0' + i
+						-else
+							li.scroller__option= i
 
-			- for (var i = 1; i <= 31; i++)
-				- if (i < 10)
-					li.form__option= '0' + i
-				-else
-					li.form__option= i
+				.scroller__bar-wrapper
+					.scroller__bar
 
-	textarea(name="comment", rows="10").form__textarea
-	button(type="submit").button Отправить
-	button(type="reset").button.button_reset Очистить
+	textarea(name="comment", placeholder="Комментарии").form__textarea
+	.form__buttons
+		button(type="submit").form__button Отправить
+		button(type="reset").form__button.form__button_reset Очистить

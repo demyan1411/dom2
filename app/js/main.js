@@ -2,32 +2,67 @@
 
  	"use strict";
 
-// Меню в адаптиве
-	$('.mini_menu').on('click', function(e) {
-		e.preventDefault();
-		$('.nav').toggleClass('active_nav');
-	});
-//*****
+ 	// $(window).scroll(function() {
+ 	// 	var windowScrollTop = $(window).scrollTop(),
+ 	// 		btnOffsetTop = $('.button_up').offset().top,
+ 	// 		footerOffsetTop = $('.footer').offset().top;
+ 	// 		console.log(btnOffsetTop);
+ 	// 		console.log(footerOffsetTop);
+
+
+
+
+
+ 	// 	 	if(btnOffsetTop > footerOffsetTop) {
+	 // 			$('.button_up').css({
+	 // 				'bottom' : '269px'
+	 // 			});
+ 	// 		} else {
+ 	// 			$('.button_up').css({
+	 // 				'bottom' : '10px'
+	 // 			});
+ 	// 		}
+
+
+
+
+ 	// });
+ 	var divider = 29;
+ 	var maxPos = $(document).height() - $('.footer').outerHeight() - 19;
+
+    $(window).scroll(function() {
+    	var btnUp = $('.button_up'),
+        	curPos = $(window).scrollTop() + $(window).height();
+        if (curPos > maxPos) {
+            btnUp.css('bottom', curPos - maxPos + divider -19);
+        } else {
+            btnUp.css('bottom', 10);
+        }
+        if ($(this).scrollTop()) {
+        	btnUp.fadeIn();
+        } else {
+        	btnUp.fadeOut();
+        }
+
+    });
+
+ 	$('.button_up').on('click', function() {
+ 		$('html, body').animate({scrollTop: 0}, 300);
+ 	});
 
 //Запуск модулей
 
-	if($('#upload').length) {
-	    getNameForImg.init('upload');
+
+	if($('.scroller').length) {
+	    scroller.init;
     }
 
-    if($('.popup').length) {
-	    popup.init('work_block_img_Add');
+    if($('.form__selectValue').length) {
+	    select.init;
     }
 
-    if($('form').length) {
-   		tooltips.init();
-   	}
-
-
-
+    if($('.slider').length) {
+	    slider.init;
+    }
 
 });
-
-
-
-

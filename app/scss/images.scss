@@ -1,0 +1,46 @@
+@import "mixins";
+
+.images{
+	margin-left: -10px;
+	margin-bottom: 20px;
+	@include cl;
+
+	&__img {
+		width: 70px;
+		height: 70px;
+		box-sizing: border-box;
+		float: left;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		font-size: 0;
+		background: url(../img/left_images.jpg) 0 0 no-repeat;
+
+		&1 {
+			background-position: 0 0;
+		}
+		&2 {
+			background-position: -80px 0;
+		}
+		&3 {
+			background-position: -160px 0;
+		}
+		&4 {
+			background-position: 0 -80px;
+		}
+		&5 {
+			background-position: -80px -80px;
+		}
+		&6 {
+			background-position: -160px -80px;
+		}
+		&7 {
+			background-position: 0 -160px;
+		}
+		&8 {
+			background-position: -80px -160px;
+		}
+		&9 {
+			background-position: -160px -160px;
+		}
+	}
+}

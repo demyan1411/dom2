@@ -35,72 +35,90 @@
               <input type="text" name="phone" placeholder="+7 (912) 000-00-00" class="form__input">
             </label>
             <label class="form__label form__label_select"><span class="form__desc">Дата звонка</span>
-              <ul name="month" class="form__select">
-                <li class="form__option">01</li>
-                <li class="form__option">02</li>
-                <li class="form__option">03</li>
-                <li class="form__option">04</li>
-                <li class="form__option">05</li>
-                <li class="form__option">06</li>
-                <li class="form__option">07</li>
-                <li class="form__option">08</li>
-                <li class="form__option">09</li>
-                <li class="form__option">10</li>
-                <li class="form__option">11</li>
-                <li class="form__option">12</li>
-              </ul>
-              <ul name="day" class="form__select">
-                <li class="form__option">01</li>
-                <li class="form__option">02</li>
-                <li class="form__option">03</li>
-                <li class="form__option">04</li>
-                <li class="form__option">05</li>
-                <li class="form__option">06</li>
-                <li class="form__option">07</li>
-                <li class="form__option">08</li>
-                <li class="form__option">09</li>
-                <li class="form__option">10</li>
-                <li class="form__option">11</li>
-                <li class="form__option">12</li>
-                <li class="form__option">13</li>
-                <li class="form__option">14</li>
-                <li class="form__option">15</li>
-                <li class="form__option">16</li>
-                <li class="form__option">17</li>
-                <li class="form__option">18</li>
-                <li class="form__option">19</li>
-                <li class="form__option">20</li>
-                <li class="form__option">21</li>
-                <li class="form__option">22</li>
-                <li class="form__option">23</li>
-                <li class="form__option">24</li>
-                <li class="form__option">25</li>
-                <li class="form__option">26</li>
-                <li class="form__option">27</li>
-                <li class="form__option">28</li>
-                <li class="form__option">29</li>
-                <li class="form__option">30</li>
-                <li class="form__option">31</li>
-              </ul>
+              <div class="form__select">
+                <div class="form__selectValue">01</div>
+                <div class="scroller">
+                  <ul class="scroller__contetnt">
+                    <li class="scroller__option">01</li>
+                    <li class="scroller__option">02</li>
+                    <li class="scroller__option">03</li>
+                    <li class="scroller__option">04</li>
+                    <li class="scroller__option">05</li>
+                    <li class="scroller__option">06</li>
+                    <li class="scroller__option">07</li>
+                    <li class="scroller__option">08</li>
+                    <li class="scroller__option">09</li>
+                    <li class="scroller__option">10</li>
+                    <li class="scroller__option">11</li>
+                    <li class="scroller__option">12</li>
+                  </ul>
+                  <div class="scroller__bar-wrapper">
+                    <div class="scroller__bar scroller__bar2"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__select">
+                <div class="form__selectValue">01</div>
+                <div class="scroller">
+                  <ul class="scroller__contetnt">
+                    <li class="scroller__option">01</li>
+                    <li class="scroller__option">02</li>
+                    <li class="scroller__option">03</li>
+                    <li class="scroller__option">04</li>
+                    <li class="scroller__option">05</li>
+                    <li class="scroller__option">06</li>
+                    <li class="scroller__option">07</li>
+                    <li class="scroller__option">08</li>
+                    <li class="scroller__option">09</li>
+                    <li class="scroller__option">10</li>
+                    <li class="scroller__option">11</li>
+                    <li class="scroller__option">12</li>
+                    <li class="scroller__option">13</li>
+                    <li class="scroller__option">14</li>
+                    <li class="scroller__option">15</li>
+                    <li class="scroller__option">16</li>
+                    <li class="scroller__option">17</li>
+                    <li class="scroller__option">18</li>
+                    <li class="scroller__option">19</li>
+                    <li class="scroller__option">20</li>
+                    <li class="scroller__option">21</li>
+                    <li class="scroller__option">22</li>
+                    <li class="scroller__option">23</li>
+                    <li class="scroller__option">24</li>
+                    <li class="scroller__option">25</li>
+                    <li class="scroller__option">26</li>
+                    <li class="scroller__option">27</li>
+                    <li class="scroller__option">28</li>
+                    <li class="scroller__option">29</li>
+                    <li class="scroller__option">30</li>
+                    <li class="scroller__option">31</li>
+                  </ul>
+                  <div class="scroller__bar-wrapper">
+                    <div class="scroller__bar"></div>
+                  </div>
+                </div>
+              </div>
             </label>
-            <textarea name="comment" rows="10" class="form__textarea"></textarea>
-            <button type="submit" class="button">Отправить</button>
-            <button type="reset" class="button button_reset">Очистить</button>
+            <textarea name="comment" placeholder="Комментарии" class="form__textarea"></textarea>
+            <div class="form__buttons">
+              <button type="submit" class="form__button">Отправить</button>
+              <button type="reset" class="form__button form__button_reset">Очистить</button>
+            </div>
           </form>
           <ul class="images">
-            <li class="images__li"><img src="" alt="лес" class="images__img images__img_img1"></li>
-            <li class="images__li"><img src="" alt="горы" class="images__img images__img_img2"></li>
-            <li class="images__li"><img src="" alt="картинка 3" class="images__img images__img_img3"></li>
-            <li class="images__li"><img src="" alt="картинка 4" class="images__img images__img_img4"></li>
-            <li class="images__li"><img src="" alt="речка" class="images__img images__img_img5"></li>
-            <li class="images__li"><img src="" alt="картинка 6" class="images__img images__img_img6"></li>
-            <li class="images__li"><img src="" alt="картинка 7" class="images__img images__img_img7"></li>
-            <li class="images__li"><img src="" alt="солнце" class="images__img images__img_img8"></li>
-            <li class="images__li"><img src="" alt="картинка 9" class="images__img images__img_img9"></li>
+            <li class="images__img images__img1">лес</li>
+            <li class="images__img images__img2">горы</li>
+            <li class="images__img images__img3">картинка 3</li>
+            <li class="images__img images__img4">картинка 4</li>
+            <li class="images__img images__img5">речка</li>
+            <li class="images__img images__img6">картинка 6</li>
+            <li class="images__img images__img7">картинка 7</li>
+            <li class="images__img images__img8">солнце</li>
+            <li class="images__img images__img9">картинка 9</li>
           </ul>
-          <adress class="adress">
-            <div class="adress__adr"></div><a href="tel:+79812342323" class="adress__phone">+1234567890</a>
-          </adress>
+          <address class="adress">
+            <div class="adress__adr">г. Москва, ул. Новая 246, <br>офис 214.</div><a href="tel:+79812342323" class="adress__phone">+7(921) 322-12-32</a>
+          </address>
         </div>
         <div class="column column-right">
           <div class="slider">
@@ -119,46 +137,74 @@
             <div class="slider__btn slider__btn_next">След.</div>
           </div>
           <div class="products">
-            <div class="products__name">Популярные товары</div><a href="" class="product"><img src="img/product1.jpg" alt="Apple Thunderb Display 27&quot;" class="product__img"/><span class="product__name">Apple Thunderb Display 27&quot;</span>
-              <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
-              </div>
-              <div class="product__right"><span class="product__text">42787825</span><span class="product__text">включена</span><span class="product__text">серебристый</span><span class="product__text">1280*1245*90</span><span class="product__text">9 кг</span>
-              </div></a><a href="" class="product"><img src="img/product2.jpg" alt="iMac 27&quot;" class="product__img"/><span class="product__name">iMac 27&quot;</span>
-              <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
-              </div>
-              <div class="product__right"><span class="product__text">123123</span><span class="product__text">выключена</span><span class="product__text">розовый</span><span class="product__text">1280*1245*90</span><span class="product__text">90 кг</span>
-              </div></a><a href="" class="product"><img src="img/product3.jpg" alt="iPhone 5s Gold" class="product__img"/><span class="product__name">iPhone 5s Gold</span>
-              <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
-              </div>
-              <div class="product__right"><span class="product__text">йцуйцу</span><span class="product__text">включена</span><span class="product__text">синий</span><span class="product__text">1280*1245*90</span><span class="product__text">150 кг</span>
-              </div></a><a href="" class="product"><img src="img/product4.jpg" alt="iPad Air Wi-Fi 128GB - Silver" class="product__img"/><span class="product__name">iPad Air Wi-Fi 128GB - Silver</span>
-              <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
-              </div>
-              <div class="product__right"><span class="product__text">фывфыв</span><span class="product__text">включена</span><span class="product__text">зелёный</span><span class="product__text">1280*1245*90</span><span class="product__text">1 кг</span>
-              </div></a><a href="" class="product"><img src="img/product5.jpg" alt="Apple iPod nano 7G 16 ГБ Blue" class="product__img"/><span class="product__name">Apple iPod nano 7G 16 ГБ Blue</span>
-              <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
-              </div>
-              <div class="product__right"><span class="product__text">ячсячс</span><span class="product__text">не работает</span><span class="product__text">фиолетовый</span><span class="product__text">1280*1245*90</span><span class="product__text">0,5 кг</span>
-              </div></a><a href="" class="product"><img src="img/product6.jpg" alt="Роутер Wi-Fi Apple AirPort" class="product__img"/><span class="product__name">Роутер Wi-Fi Apple AirPort</span>
-              <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
-              </div>
-              <div class="product__right"><span class="product__text">апрапрапр</span><span class="product__text">выломана</span><span class="product__text">золотой</span><span class="product__text">1280*1245*90</span><span class="product__text">60 кг</span>
-              </div></a>
+            <div class="products__name">Популярные товары</div>
+            <div class="products__blocks"><a href="" class="product">
+                <div class="product__title">
+                  <div class="product__title_abs"><img src="img/product1.jpg" alt="Apple Thunderb Display 27&quot;" class="product__img"/><span class="product__name">Apple Thunderb Display 27&quot;</span></div>
+                </div>
+                <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
+                </div>
+                <div class="product__right"><span class="product__text">42787825</span><span class="product__text">включена</span><span class="product__text">серебристый</span><span class="product__text">1280*1245*90</span><span class="product__text">9 кг</span>
+                </div></a><a href="" class="product">
+                <div class="product__title">
+                  <div class="product__title_abs"><img src="img/product2.jpg" alt="iMac 27&quot;" class="product__img"/><span class="product__name">iMac 27&quot;</span></div>
+                </div>
+                <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
+                </div>
+                <div class="product__right"><span class="product__text">123123</span><span class="product__text">выключена</span><span class="product__text">розовый</span><span class="product__text">1280*1245*90</span><span class="product__text">90 кг</span>
+                </div></a><a href="" class="product">
+                <div class="product__title">
+                  <div class="product__title_abs"><img src="img/product3.jpg" alt="iPhone 5s Gold" class="product__img"/><span class="product__name">iPhone 5s Gold</span></div>
+                </div>
+                <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
+                </div>
+                <div class="product__right"><span class="product__text">йцуйцу</span><span class="product__text">включена</span><span class="product__text">синий</span><span class="product__text">1280*1245*90</span><span class="product__text">150 кг</span>
+                </div></a>
+            </div>
+            <div class="products__name">Товары со скидкой</div>
+            <div class="products__blocks"><a href="" class="product">
+                <div class="product__title">
+                  <div class="product__title_abs"><img src="img/product4.jpg" alt="iPad Air Wi-Fi 128GB - Silver" class="product__img"/><span class="product__name">iPad Air Wi-Fi 128GB - Silver</span></div>
+                </div>
+                <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
+                </div>
+                <div class="product__right"><span class="product__text">фывфыв</span><span class="product__text">включена</span><span class="product__text">зелёный</span><span class="product__text">1280*1245*90</span><span class="product__text">1 кг</span>
+                </div></a><a href="" class="product">
+                <div class="product__title">
+                  <div class="product__title_abs"><img src="img/product5.jpg" alt="Apple iPod nano 7G 16 ГБ Blue" class="product__img"/><span class="product__name">Apple iPod nano 7G 16 ГБ Blue</span></div>
+                </div>
+                <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
+                </div>
+                <div class="product__right"><span class="product__text">ячсячс</span><span class="product__text">не работает</span><span class="product__text">фиолетовый</span><span class="product__text">1280*1245*90</span><span class="product__text">0,5 кг</span>
+                </div></a><a href="" class="product">
+                <div class="product__title">
+                  <div class="product__title_abs"><img src="img/product6.jpg" alt="Роутер Wi-Fi Apple AirPort" class="product__img"/><span class="product__name">Роутер Wi-Fi Apple AirPort</span></div>
+                </div>
+                <div class="product__left"><span class="product__text">Артикул</span><span class="product__text">Опция</span><span class="product__text">Цвет</span><span class="product__text">Размер</span><span class="product__text">Вес</span>
+                </div>
+                <div class="product__right"><span class="product__text">апрапрапр</span><span class="product__text">выломана</span><span class="product__text">золотой</span><span class="product__text">1280*1245*90</span><span class="product__text">60 кг</span>
+                </div></a>
+            </div>
           </div>
         </div>
-        <div class="button button_up">Наверх</div>
+        <div class="button_up">Наверх</div>
       </div>
     </div>
     <footer class="footer">
-      <div class="wrapper wrapper_footer"><a href="#" class="logo logo_foot"><img src="img/logo2.png" alt="logo2" class="logo__img logo__img_foot"></a>
+      <div class="wrapper wrapper_footer"><a href="#" class="logo_foot"><img src="img/logo_foot.png" alt="logo-footer" class="logo_foot__img"></a>
         <div class="footerMenu"><span class="footerMenu__title">О магазине</span><a href="" class="footerMenu__link">О нас</a><a href="" class="footerMenu__link">Наши цены</a><a href="" class="footerMenu__link">Наши скидки</a><a href="" class="footerMenu__link">Акции</a></div>
         <div class="footerMenu"><span class="footerMenu__title">Каталог</span><a href="" class="footerMenu__link">Смартфоны</a><a href="" class="footerMenu__link">Планшеты</a><a href="" class="footerMenu__link">Компьютеры</a><a href="" class="footerMenu__link">Аксессуары</a></div>
         <div class="footerMenu"><span class="footerMenu__title">Контакты</span><a href="" class="footerMenu__link">Телефоны</a><a href="" class="footerMenu__link">Адреса</a><a href="" class="footerMenu__link">Карта проезда</a><a href="" class="footerMenu__link">Обратная связь</a></div>
+        <div class="socials">
+          <div class="socials__buy"><a href="" class="socials__buy_link"><img src="img/appStore.png" alt="appStore" class="socials__buy_img"></a><a href="" class="socials__buy_link"><img src="img/googlePlay.png" alt="googlePlay" class="socials__buy_img"></a></div>
+          <div class="socials__links"><a href="" class="socials__link socials__link_vk">vk</a><a href="" class="socials__link socials__link_fb">facebook</a><a href="" class="socials__link socials__link_tw">twitter</a></div>
+        </div>
       </div>
     </footer>
     <!-- build:js js/vendor.min.js-->
     <!-- bower:js-->
     <script src="/bower/jquery/jquery.js"></script>
+    <script src="/bower/baron/baron.js"></script>
     <!-- endbower-->
     <!-- endbuild-->
     <!-- build:js js/main.min.js-->

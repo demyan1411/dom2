@@ -3,7 +3,8 @@
   padding-top: 15px;
   background: #f4f6f9;
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-bottom: 30px; }
   .form__label {
     display: block;
     font-size: 0;
@@ -31,7 +32,7 @@
       display: inline-block;
       height: 100%;
       vertical-align: middle; }
-  .form__input, .form .placeholder {
+  .form__input, .form .placeholder, .form__textarea {
     width: 130px;
     font-size: 12px;
     color: #dae1eb;
@@ -39,40 +40,37 @@
     box-sizing: border-box;
     border: 1px solid #dae1eb;
     float: right; }
-    .form__input::-webkit-input-placeholder, .form .placeholder::-webkit-input-placeholder {
+    .form__input::-webkit-input-placeholder, .form .placeholder::-webkit-input-placeholder, .form__textarea::-webkit-input-placeholder {
       color: #dae1eb; }
-    .form__input:-moz-placeholder, .form .placeholder:-moz-placeholder {
+    .form__input:-moz-placeholder, .form .placeholder:-moz-placeholder, .form__textarea:-moz-placeholder {
       color: #dae1eb; }
-    .form__input::-moz-placeholder, .form .placeholder::-moz-placeholder {
+    .form__input::-moz-placeholder, .form .placeholder::-moz-placeholder, .form__textarea::-moz-placeholder {
       color: #dae1eb; }
-    .form__input:-ms-input-placeholder, .form .placeholder:-ms-input-placeholder {
+    .form__input:-ms-input-placeholder, .form .placeholder:-ms-input-placeholder, .form__textarea:-ms-input-placeholder {
       color: #dae1eb; }
   .form__select {
-    padding: 0;
+    position: relative;
     float: right;
-    margin-left: 12px;
-    border: none;
     font-size: 12px;
-    color: #dae1eb; }
-  .form__option {
-    display: none;
-    border: 1px solid #dae1eb;
+    margin-left: 12px;
+    padding: 0;
+    width: 51px; }
+  .form__selectValue {
     background: #fff;
     padding: 3px;
-    padding-left: 6px;
-    width: 51px;
+    padding-left: 4px;
     box-sizing: border-box;
-    position: relative; }
-    .form__option:first-child {
-      display: block; }
-    .form__option:after {
+    border: 1px solid #dae1eb;
+    position: relative;
+    color: #dae1eb; }
+    .form__selectValue:after {
       content: '';
       width: 26px;
       height: 100%;
       position: absolute;
       top: 0;
       right: 0;
-      background: blue;
+      background: #00b9fe url(../img/down.png) center center no-repeat;
       cursor: pointer; }
   .form .placeholder {
     position: absolute;
@@ -80,3 +78,84 @@
     right: 0;
     border: none;
     padding: 6px 7px; }
+  .form__textarea {
+    width: 100%;
+    height: 70px;
+    resize: none;
+    float: none;
+    display: block;
+    margin-bottom: 15px; }
+  .form__buttons:before, .form__buttons:after {
+    content: " ";
+    display: table; }
+  .form__buttons:after {
+    clear: both; }
+  .form__button {
+    background: #00b9fe;
+    font-family: "elektra_light_probold";
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 8px;
+    float: left;
+    cursor: pointer;
+    display: block;
+    transition: all linear 0.2s; }
+    .form__button:hover {
+      background: #1483ac; }
+    .form__button_reset {
+      float: right;
+      background: #dae1eb; }
+      .form__button_reset:hover {
+        background: #b4bcc8; }
+
+.scroller {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 210px;
+  display: none;
+  border: 1px solid #dae1eb;
+  border-top: none;
+  box-sizing: border-box; }
+  .scroller__contetnt {
+    position: absolute;
+    width: 100%;
+    height: 210px;
+    box-sizing: border-box;
+    padding-top: 5px;
+    background: #fff;
+    overflow-y: scroll; }
+  .scroller__contetnt::-webkit-scrollbar {
+    width: 0; }
+  .scroller__option {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 3px;
+    padding-left: 6px; }
+    .scroller__option:hover {
+      background: #dae1eb;
+      cursor: pointer; }
+  .scroller__bar-wrapper {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    bottom: 5px;
+    right: 5px;
+    width: 8px;
+    border-radius: 5px;
+    background: #ddf;
+    background: rgba(0, 0, 255, 0.1);
+    background: transparent;
+    pointer-events: none; }
+  .scroller__bar {
+    position: absolute;
+    z-index: 1;
+    width: 8px;
+    background: #00b9fe;
+    height: 80px !important;
+    opacity: .6;
+    pointer-events: auto; }
+    .scroller__bar2 {
+      height: 130px !important; }

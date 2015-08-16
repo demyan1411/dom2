@@ -1,0 +1,66 @@
+.products {
+  width: 100%;
+  text-align: center; }
+  .products__name {
+    font-family: "elektra_light_probold";
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 10px; }
+    .products__name:after, .products__name:before {
+      content: '';
+      width: 230px;
+      height: 1px;
+      background: #5c7b98;
+      position: absolute;
+      top: 50%; }
+    .products__name:before {
+      left: 0; }
+    .products__name:after {
+      right: 0; }
+  .products__blocks {
+    text-align: left;
+    margin-bottom: 30px; }
+    .products__blocks:before, .products__blocks:after {
+      content: " ";
+      display: table; }
+    .products__blocks:after {
+      clear: both; }
+
+.product {
+  width: 230px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 25px;
+  border: 1px solid #dce2ec;
+  padding: 12px;
+  padding-top: 0; }
+  .product:hover {
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1); }
+  .product:first-child {
+    margin-left: 0; }
+  .product__title {
+    height: 90px;
+    position: relative;
+    margin-bottom: 20px; }
+    .product__title_abs {
+      position: absolute;
+      bottom: 0; }
+  .product__img {
+    display: inline-block;
+    vertical-align: middle; }
+  .product__name {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 108px;
+    margin-left: 8px;
+    font-size: 15px;
+    color: #00b9fe;
+    text-decoration: underline; }
+    .product__name:hover {
+      color: #613993; }
+  .product__left {
+    float: left; }
+  .product__right {
+    float: right; }
+  .product__text {
+    display: block; }

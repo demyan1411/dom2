@@ -3,5 +3,7 @@ ul.images
 	- var images = ['лес', 'горы', 'картинка 3', 'картинка 4', 'речка', 'картинка 6', 'картинка 7', 'солнце', 'картинка 9'];
 	each value, index in images
 
-		li.images__li
-			img(src="", alt="" + value class="images__img images__img_img" + (index +1))
+		li(class="images__img images__img" + (index + 1))= value
+
+
+			//- img(src="img/left_images.jpg", alt="" + value class="images__img images__img_img" + (index +1))

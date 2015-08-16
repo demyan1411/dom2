@@ -1,0 +1,20 @@
+.adress {
+  width: 100%;
+  background: #f4f6f9;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 15px; }
+  .adress__adr {
+    text-align: left;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding-left: 23px;
+    background: url(../img/adr.png) 0 0 no-repeat; }
+  .adress__phone {
+    padding-left: 19px;
+    background: url(../img/phone.png) 0 0 no-repeat;
+    display: inline-block;
+    padding-bottom: 2px; }
