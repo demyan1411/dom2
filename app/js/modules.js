@@ -113,7 +113,7 @@ var slider = (function() {
 				width = 740;
 				next = $('.slider__slideActive').next();
 	            _animateSlide();
-	        }, 2000);
+	        }, 3000);
 		},
 		_sliderStop = function() {
 			$('.slider').mouseenter(function() {
