@@ -2,31 +2,6 @@
 
  	"use strict";
 
- 	// $(window).scroll(function() {
- 	// 	var windowScrollTop = $(window).scrollTop(),
- 	// 		btnOffsetTop = $('.button_up').offset().top,
- 	// 		footerOffsetTop = $('.footer').offset().top;
- 	// 		console.log(btnOffsetTop);
- 	// 		console.log(footerOffsetTop);
-
-
-
-
-
- 	// 	 	if(btnOffsetTop > footerOffsetTop) {
-	 // 			$('.button_up').css({
-	 // 				'bottom' : '269px'
-	 // 			});
- 	// 		} else {
- 	// 			$('.button_up').css({
-	 // 				'bottom' : '10px'
-	 // 			});
- 	// 		}
-
-
-
-
- 	// });
  	var divider = 29;
  	var maxPos = $(document).height() - $('.footer').outerHeight() - 19;
 
