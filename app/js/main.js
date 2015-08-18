@@ -67,9 +67,47 @@
     var $this = this,
         body = $('body');
 
+    $this
+    	.addClass('tooltipstered')
+    	.attr('data-tooltip-position', options.position);
+
     body.append(markup);
 
     _positionIt($this, body.find('.tooltip').last(), options.position);
+
+    var tooltips = $('.tooltip'),
+    	tooltipsArray = [],
+    	tooltipstered = $('.tooltipstered'),
+    	tooltipsteredArray = [],
+    	tooltipNumber = 0,
+    	elemNumber = 0;
+
+    tooltips.each(function() {
+    	$(this).attr('data-tooltip-number', tooltipNumber)
+		tooltipNumber++;
+		tooltipsArray.push($(this));
+	});
+
+	tooltipstered.each(function() {
+		$(this).attr('data-elem-number', elemNumber)
+		elemNumber++;
+		tooltipsteredArray.push($(this));
+    });
+
+    $this.on('click', function() {
+    	var thisElemNumber = $(this).data('elem-number');
+    	$('[data-tooltip-number = ' + thisElemNumber +']').remove();
+    });
+
+    $(window).resize(function() {
+
+    	$('.tooltipstered').each(function(index) {
+    		var position = $(this).data('tooltip-position');
+
+    		_positionIt($(this), tooltipsArray[index], position);
+    	});
+    });
+
 
     function _positionIt(elem, tooltip, position) {
 
