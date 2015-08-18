@@ -1,3 +1,25 @@
+
+// var tooltip = (function() {
+
+// 	var init = function() {
+// 			_setUpListeners();
+// 			// то, что должно произойти сразу
+// 		},
+// 		_setUpListeners = function() {
+// 			// прослушка событий
+
+// 		};
+
+// 		return {
+// 			init: init
+// 		};
+
+// })();
+
+
+
+
+
 //******* ie8 preventDefault
 	function ie8SafePreventEvent(e) {
 	    if (e.preventDefault) {
