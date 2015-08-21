@@ -34,7 +34,7 @@ body {
   position: relative; }
 
 .wrapper {
-  width: 1000px;
+  width: 985px;
   margin: 0 auto;
   padding: 0;
   position: relative;
@@ -68,7 +68,9 @@ body {
   bottom: 10px;
   margin-left: 502px;
   cursor: pointer;
-  display: none;
+  display: block;
+  opacity: 0;
+  transition: opacity linear 0.2s;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -76,7 +78,7 @@ body {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none; }
-  .button_up.activeButton_up {
+  .button_up.button_up_active {
     opacity: 1; }
   .button_up.relButton_up {
     opacity: 1;

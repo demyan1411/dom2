@@ -73,11 +73,13 @@ body {
 	bottom: 10px;
 	margin-left: 502px;
 	cursor: pointer;
-	display: none;
+  display: block;
+	opacity: 0;
+	transition: opacity linear .2s;
 
 	@include noselect;
 
-	&.activeButton_up {
+	&.button_up_active {
 		opacity: 1;
 	}
 	&.relButton_up {

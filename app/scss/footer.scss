@@ -6,6 +6,7 @@
 	background: url(../img/pattern.jpg) 0 0 repeat;
 	padding-top: 65px;
 	box-sizing: border-box;
+	min-width: 1005px;
 }
 .wrapper_footer {
 	padding-bottom: 0;
@@ -26,7 +27,6 @@
 		font-family: $fontBold;
 	}
 	&__link {
-		display: block;
 		text-decoration: underline;
 
 		&:hover {

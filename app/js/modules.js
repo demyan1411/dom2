@@ -1,25 +1,3 @@
-
-// var tooltip = (function() {
-
-// 	var init = function() {
-// 			_setUpListeners();
-// 			// то, что должно произойти сразу
-// 		},
-// 		_setUpListeners = function() {
-// 			// прослушка событий
-
-// 		};
-
-// 		return {
-// 			init: init
-// 		};
-
-// })();
-
-
-
-
-
 //******* ie8 preventDefault
 	function ie8SafePreventEvent(e) {
 	    if (e.preventDefault) {
@@ -31,9 +9,50 @@
 	    e.returnValue = false;
 	    e.stopPropagation();
 	}
-//Tooltips && Validator
 
 
+	// button to top
+
+var upBtn = (function() {
+	var divider = 29;
+	var maxPos = $(document).height() - $('.footer').outerHeight() - 19;
+
+	var start = function() {
+		_setUpListeners();
+	},
+	_setUpListeners = function() {
+		_upToTop();
+		_scrollWindow();
+	},
+	_upToTop = function () {
+		$('.button_up').on('click', function() {
+			$('html, body').animate({scrollTop: 0}, 300);
+		});
+	},
+	_scrollWindow = function () {
+		$(window).scroll(function() {
+			var btnUp = $('.button_up'),
+					curPos = $(window).scrollTop() + $(window).height();
+				if (curPos > maxPos) {
+						btnUp.css('bottom', curPos - maxPos + divider -19);
+				} else {
+						btnUp.css('bottom', 10);
+				}
+				if ($(this).scrollTop()) {
+					btnUp.addClass('button_up_active');
+				} else {
+					btnUp.removeClass('button_up_active');
+				}
+		});
+	}
+
+	return {
+				init: start()
+	}
+
+}());
+
+// select
 
 var select = (function() {
 
@@ -49,8 +68,9 @@ var select = (function() {
 		},
 		_showSelect = function() {
 			$('.form__selectValue').on('click', function() {
-				$(this).next('.scroller').slideToggle(200);
-				$(this).next('.scroller').addClass('scrollerActive');
+				var $scroller = $(this).next('.scroller');
+				$scroller.slideToggle(200);
+				$scroller.addClass('scrollerActive');
 			});
 		},
 		_closeSelect = function() {
@@ -67,12 +87,12 @@ var select = (function() {
 		_insertValue = function() {
 			$('.scroller__option').on('click', function() {
 				var val = $(this).text();
-				$(this).closest('.scroller').siblings('.form__selectValue').text(val);
+				$(this).closest('.scroller').siblings('.form__selectValue').text(val).addClass('form__selectValue_active');
 			});
 		},
 		_resetSelect = function() {
 			$('[type=reset]').on('click', function() {
-				$('.form__selectValue').text('01');
+				$('.form__selectValue').text('01').removeClass('form__selectValue_active');
 			});
 		}
 
@@ -81,6 +101,8 @@ var select = (function() {
 	}
 
 }());
+
+// scroller
 
 var scroller = (function() {
 
@@ -101,6 +123,8 @@ var scroller = (function() {
 	}
 
 }());
+
+// slider
 
 var slider = (function() {
 	var prevNext,

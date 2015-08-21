@@ -27,7 +27,7 @@
       clear: both; }
 
 .product {
-  width: 230px;
+  width: 225px;
   box-sizing: border-box;
   float: left;
   margin-left: 25px;
@@ -51,7 +51,7 @@
   .product__name {
     display: inline-block;
     vertical-align: middle;
-    max-width: 108px;
+    max-width: 105px;
     margin-left: 8px;
     font-size: 15px;
     color: #00b9fe;

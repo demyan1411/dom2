@@ -30,7 +30,7 @@
 
 .column-right {
   float: right;
-  width: 740px;
+  width: 725px;
 }
 /* defaul style */
 
@@ -90,7 +90,7 @@ body {
 }
 
 .wrapper {
-  width: 1000px;
+  width: 985px;
   margin: 0 auto;
   padding: 0;
   position: relative;
@@ -132,7 +132,9 @@ body {
   bottom: 10px;
   margin-left: 502px;
   cursor: pointer;
-  display: none;
+  display: block;
+  opacity: 0;
+  transition: opacity linear 0.2s;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -142,7 +144,7 @@ body {
   user-select: none;
 }
 
-.button_up.activeButton_up {
+.button_up.button_up_active {
   opacity: 1;
 }
 
@@ -196,6 +198,7 @@ body {
   background: url("../img/pattern.jpg") 0 0 repeat;
   padding-top: 65px;
   box-sizing: border-box;
+  min-width: 1005px;
 }
 
 .wrapper_footer {
@@ -221,7 +224,6 @@ body {
 }
 
 .footerMenu__link {
-  display: block;
   text-decoration: underline;
 }
 
@@ -316,7 +318,7 @@ body {
 .form__textarea {
   width: 130px;
   font-size: 12px;
-  color: #dae1eb;
+  color: #000;
   padding: 7px;
   box-sizing: border-box;
   border: 1px solid #dae1eb;
@@ -364,6 +366,10 @@ body {
   border: 1px solid #dae1eb;
   position: relative;
   color: #dae1eb;
+}
+
+.form__selectValue_active {
+  color: #000;
 }
 
 .form__selectValue:after {
@@ -611,7 +617,7 @@ body {
 }
 
 .product {
-  width: 230px;
+  width: 225px;
   box-sizing: border-box;
   float: left;
   margin-left: 25px;
@@ -647,7 +653,7 @@ body {
 .product__name {
   display: inline-block;
   vertical-align: middle;
-  max-width: 108px;
+  max-width: 105px;
   margin-left: 8px;
   font-size: 15px;
   color: #00b9fe;

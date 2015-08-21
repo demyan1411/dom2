@@ -38,13 +38,14 @@
 	&__input, .placeholder, &__textarea {
 		width: 130px;
 		font-size: 12px;
-		color: #dae1eb;
+		color: #000;
 		padding: 7px;
 		box-sizing: border-box;
 		border: 1px solid #dae1eb;
 		float: right;
 
 		@include placecolor(#dae1eb);
+
 	}
 
 	&__select {
@@ -64,6 +65,10 @@
 		border: 1px solid #dae1eb;
 		position: relative;
 		color: #dae1eb;
+
+		&_active {
+			color: #000;
+		}
 
 		&:after {
 			content: '';

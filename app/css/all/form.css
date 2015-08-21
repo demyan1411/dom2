@@ -35,7 +35,7 @@
   .form__input, .form .placeholder, .form__textarea {
     width: 130px;
     font-size: 12px;
-    color: #dae1eb;
+    color: #000;
     padding: 7px;
     box-sizing: border-box;
     border: 1px solid #dae1eb;
@@ -63,6 +63,8 @@
     border: 1px solid #dae1eb;
     position: relative;
     color: #dae1eb; }
+    .form__selectValue_active {
+      color: #000; }
     .form__selectValue:after {
       content: '';
       width: 26px;
