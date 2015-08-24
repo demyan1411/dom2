@@ -11,6 +11,11 @@ $fontBold : 'elektra_light_probold';
 // 	font-family: 'elektra_light_probold';
 // }
 
+@function em($target, $context: $bodyFontSize) {
+	@if $target == 0 {@return 0}
+	@return $target / $context + 0em;
+}
+
 @mixin inlineBlock {
 	display: inline-block;
 	vertical-align: top;

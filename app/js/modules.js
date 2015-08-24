@@ -299,9 +299,14 @@ function postFormData(form, successCallback) {
 
     $this.on('mousedown', function() {
     	$('[data-tooltip-number = ' + thisElemNumber +']').remove();
-      $this.removeClass('tooltipstered');
+      $this.removeClass('tooltipstered').removeClass('error');
     });
 
+    $('[type="reset"]').on('click', function() {
+      $('[data-elem-number]').removeClass('tooltipstered').removeClass('error');
+      $('[data-tooltip-number]').remove();
+    });
+    
     $(window).resize(function() {
     	$('.tooltipstered').each(function() {
     		var position = $(this).data('tooltip-position'),
