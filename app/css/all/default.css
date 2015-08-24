@@ -96,4 +96,7 @@ body {
     border-bottom: 6px solid #fff;
     bottom: -1px; }
 
+.error {
+  border: 1px solid red !important; }
+
 /* defaul style end */

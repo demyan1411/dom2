@@ -22,21 +22,46 @@
   if($('.button_up').length) {
     upBtn.init;
   }
-var tooltipNumber = 0;
-    $('form').on('submit', function(e) {
-        e.preventDefault();
 
-        $('.form__input').each(function() {
-            $(this).tooltip({
-                position: 'left',
-                content: 'qweqwe'
-            });
 
+  $('form').on('submit', function(e) {
+      e.preventDefault();
+
+      var $this = $(this);
+      
+      if(validateThis($this)) {
+        postFormData($this, function(data) {
+          if(data.status) {
+            console.log('success');
+          } else {
+            console.log('fail');
+          }
         });
-
+      }
 
     });
+
 });
+
+function postFormData(form, successCallback) {
+  var host = form.attr('action'),
+      reqFields = form.find('[name]'),
+      dataObject = {};
+
+      if(!host) {
+        console.log('set action attribute to your form, you fool!!');
+      }
+
+      reqFields.each(function() {
+        var $this = $(this),
+            value = $this.val(),
+            name = $this.attr('name');
+
+        dataObject[name] = value;
+      });
+
+      $.post(host, dataObject, successCallback);
+}
 
 //////////////////////
 
@@ -69,58 +94,24 @@ var tooltipNumber = 0;
         .attr('data-tooltip-position', options.position);
         body.append(markup);
         _positionIt($this, body.find('.tooltip').last(), options.position);
-
     }
 
-    $this.on('click', function() {
+    $this.on('mousedown', function() {
     	$('[data-tooltip-number = ' + thisElemNumber +']').remove();
       $this.removeClass('tooltipstered');
     });
 
-
-      // function _resetElem(elem) {
-      //   elem.removeAttr('data-tooltip-number');
-      //   $('.tooltip').remove();
-      // }
-
-
-
-
-
-
-    // var tooltips = $('.tooltip'),
-    // 	tooltipsArray = [],
-    // 	tooltipstered = $('.tooltipstered'),
-    // 	tooltipsteredArray = [],
-    // 	tooltipNumber = 0,
-    // 	elemNumber = 0;
-    //
-    // tooltips.each(function() {
-    // 	$(this).attr('data-tooltip-number', tooltipNumber)
-  	// 	tooltipNumber++;
-  	// 	tooltipsArray.push($(this));
-  	// });
-    //
-  	// tooltipstered.each(function() {
-  	// 	$(this).attr('data-elem-number', elemNumber)
-  	// 	elemNumber++;
-  	// 	tooltipsteredArray.push($(this));
-    // });
-
-
-
-    // $(window).resize(function() {
-    //
-    // 	tooltipstered.each(function(index) {
-    // 		var position = $(this).data('tooltip-position');
-    // 		_positionIt($(this), tooltipsArray[index], position);
-    // 	});
-    // });
-
+    $(window).resize(function() {
+    	$('.tooltipstered').each(function() {
+    		var position = $(this).data('tooltip-position'),
+            resizedTooltipNumber = $(this).data('elem-number'),
+            resizedTooltip = $('[data-tooltip-number = ' + resizedTooltipNumber +']');
+    		_positionIt($(this), resizedTooltip, position);
+    	});
+    });
 
     function _positionIt(elem, tooltip, position) {
         if(!tooltip.is("[data-tooltip-number]")) {
-          console.log(thisElemNumber);
           tooltip.attr('data-tooltip-number', thisElemNumber);
         }
 
@@ -170,8 +161,61 @@ var tooltipNumber = 0;
             .css({
                 'opacity': 1
             });
-
-
     }
-
 };
+
+
+function validateThis(form) {
+  var textType = form.find('[data-validation="text"]'),
+      mailType = form.find('[data-validation="mail"]'),
+      phoneType = form.find('[data-validation="phone"]');
+
+  textType.each(function() {
+    var $this = $(this),
+        emptyField = $this.val();
+
+    if(emptyField === '') {
+      $this.tooltip({
+        content: 'Заполните поле',
+        position: 'left'
+      });
+      $this.addClass('error');
+    } else {
+      $this.removeClass('error')
+    }
+  });
+
+  mailType.each(function() {
+    var $this = $(this),
+        regExp = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/,
+        isMail = regExp.test($this.val());
+
+    if(!isMail) {
+      $this.tooltip({
+        content: 'Заполните поле',
+        position: 'bottom'
+      });
+      $this.addClass('error');
+    } else {
+      $this.removeClass('error')
+    }
+  });
+
+  phoneType.each(function() {
+    var $this = $(this),
+        regExp = /[0-9]/,
+        isphone = regExp.test($this.val());
+
+    if(!isphone) {
+      $this.tooltip({
+        content: 'Заполните поле',
+        position: 'right'
+      });
+      $this.addClass('error');
+    } else {
+      $this.removeClass('error')
+    }
+  });
+
+  return form.find('.error').length === 0;
+}

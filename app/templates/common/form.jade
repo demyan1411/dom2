@@ -1,11 +1,14 @@
-form.form
+form#form.form(action="mail.php")
 	h2.form__title Заказать звонок
 	label.form__label
 		span.form__desc Ваше имя
-		input(type="text", name="name", placeholder="Константин").form__input
+		input(type="text", name="name", placeholder="Константин", data-validation="text").form__input
 	label.form__label
 		span.form__desc Телефон
-		input(type="text", name="phone", placeholder="+7 (912) 000-00-00").form__input
+		input(type="text", name="phone", placeholder="+7 (912) 000-00-00", data-validation="phone").form__input
+	label.form__label
+		span.form__desc Почта
+		input(type="text", name="mail", placeholder="ivanov@mail.ru", data-validation="mail").form__input
 	label.form__label.form__label_select
 		span.form__desc Дата звонка
 

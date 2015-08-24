@@ -172,6 +172,10 @@ body {
   bottom: -1px;
 }
 
+.error {
+  border: 1px solid red !important;
+}
+
 /* defaul style end */
 /* fonts */
 
